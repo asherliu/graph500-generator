@@ -123,10 +123,12 @@ int main(int argc, char** argv)
 		//store current edge
 		//fprintf(fid[src/sz_row_par][des/sz_col_par],"%lu,%lu\n",src,des);
 		fprintf(fid[src/sz_row_par][des/sz_col_par],"%lu %lu\n",src,des);
-
+		
+		#ifdef UNDIRECTED
 		//store reverse edge
 		//fprintf(fid[des/sz_col_par][src/sz_row_par],"%lu,%lu\n",des,src);
 		fprintf(fid[des/sz_col_par][src/sz_row_par],"%lu %lu\n",des,src);
+		#endif
 	}
 
 
@@ -152,11 +154,14 @@ int main(int argc, char** argv)
 	
 		//store current edge
 		fwrite(result+i,sizeof(packed_edge),1,fid[src/sz_row_par][des/sz_col_par]);
-	
+
+		#ifdef UNDRECTED
 		//store reverse edge
 		result[i].v0=des;
 		result[i].v1=src;
 		fwrite(result+i,sizeof(packed_edge),1,fid[des/sz_row_par][src/sz_col_par]);
+		#endif
+		
 	}
 
 	for(int i=0;i<row_par;i++)
