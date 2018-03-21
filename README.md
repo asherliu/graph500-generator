@@ -8,7 +8,7 @@ This file contains two components (folders).
 ---
 Compile
 -------------
-- Machine should install MPI (on colonial0, colonial03 and colonial04, as well as colonialone).
+- Machine should install MPI.
 - **make** will compile the file to executable binary
 
 ----
