@@ -11,17 +11,15 @@ Compile
 - Machine should install MPI (on colonial0, colonial03 and colonial04, as well as colonialone).
 - **make** will compile the file to executable binary
 
---
+----
 Run
 ------------
 **./executable** will the required input formats to run the code.
-- **colonial0** (local machine): 
+- **Single node**: 
   - mpirun -n **number-processes** -host localhost /path/to/generator_test_mpi  log_numverts degree row-partitions column-partitions
   - mpirun -n num-partitions(row-partitions x col-partitions) -host localhost /path/to/tuple_to_csr log_numverts degree row-partitions column-partitions **number-processes**
-- **colonialone** (cluster): please refer to **run.bash** script in this folder.
+- **Distributed node** (cluster): please refer to **run.bash**, which is assuming "slurm" resource management policy.
 
 
----
-Let's talk about the detail functionality of each line, if you need to
-
---Hang
+--------
+Contact: Hang_Liu@uml.edu. 
